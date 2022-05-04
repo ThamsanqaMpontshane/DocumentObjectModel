@@ -20,3 +20,21 @@
   font-weight: bold;
   font-size: 2em;
 }
+function totalPhoneBill(phoneBill) {
+  var total = 0;
+  var bill = phoneBill.split(",");
+  for (var i = 0; i < bill.length; i++) {
+      if (bill[i] === "call") {
+          total += 2.75;
+      } else if (bill[i] === "sms") {
+          total += 0.65;
+      }
+  }
+  return total.toFixed(2);
+};
+
+function btnbtn2() {
+  var billString1 = document.querySelector(".billTypeText").value;
+  var billTotal1 = document.querySelector(".callTotalOne");
+  billTotal1.innerHTML = totalPhoneBill(billString1);
+};
