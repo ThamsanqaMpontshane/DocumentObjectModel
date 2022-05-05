@@ -10,7 +10,9 @@
   color: orange;
   font-weight: bold;
 }
-
+.black{
+  color: black;
+}
 .danger {
   color: crimson;
   font-weight: bold;

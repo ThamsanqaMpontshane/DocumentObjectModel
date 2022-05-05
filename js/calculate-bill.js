@@ -12,7 +12,7 @@
 
 //link the function to a click event on the calculate button
 
-//function to calculate the bill total
+//function to calculate the billString1 total
 //  * this function should take the billString as an argument
 //  * split the string on a comma
 //  * loop over all the entries in the the resulting list
@@ -22,10 +22,11 @@
 function totalPhoneBill(phoneBill) {
     var total = 0;
     var bill = phoneBill.split(",");
-    for (var i = 0; i < bill.length; i++) {
-        if (bill[i] === "call") {
+    for (i = 0;i < bill.length;i++) {
+    var billString1 = bill[i].trim()
+    if (billString1 === "call" || billString1 === "CALL" || billString1 === "Call" || billString1 === "calL" || billString1 === "cAll") {
             total += 2.75;
-        } else if (bill[i] === "sms") {
+    } else if (billString1 === "sms" || billString1 === "SMS" || billString1 === "SmS" || billString1=== "Sms" || billString1 === "smS" || billString1 === "sMs") {
             total += 0.75;
         }
     }
@@ -37,11 +38,16 @@ function btnbtn() {
     var billTotal = document.querySelector(".billTotal");
     billTotal.innerHTML = totalPhoneBill(billString);
 
-    if (totalPhoneBill(billString) >= 20 && totalPhoneBill(billString) < 29) {
+    billTotal.classList.remove("warning");
+    billTotal.classList.remove("danger");
+
+    if (totalPhoneBill(billString) >= 20 && totalPhoneBill(billString) <= 30) {
         // adding the danger class will make the text red
+        billTotal.classList.remove("danger");
         billTotal.classList.add("warning");
     }
-    else if (totalPhoneBill(billString) >= 30 && totalPhoneBill(billString) < 50) {
+    else if (totalPhoneBill(billString) > 30 && totalPhoneBill(billString) < 50) {
+        billTotal.classList.remove("warning");
         billTotal.classList.add("danger");
     }
 

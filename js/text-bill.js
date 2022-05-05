@@ -58,9 +58,10 @@ function textBillTotal() {
     // get the value entered in the billType textfield
     var billTypeEntered = billTypeText.value;
     // update the correct total
-    if (billTypeEntered === "call") {
+    if (billTypeEntered === "call" || billTypeEntered === "CALL" || billTypeEntered === "Call" || billTypeEntered === "calL" || billTypeEntered === "cAll" ) {
+
         callsTotal += 2.75;
-    } else if (billTypeEntered === "sms") {
+    } else if (billTypeEntered === "sms" || billTypeEntered === "SMS" || billTypeEntered === "Sms" || billTypeEntered === "smS" || billTypeEntered === "sMs" || billTypeEntered === "SmS") {
         smsTotal += 0.75;
     }
 

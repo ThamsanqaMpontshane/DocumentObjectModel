@@ -35,3 +35,12 @@ function radioBill(){
         document.querySelector(".totalTwo").classList.add("danger");
     }
 }
+
+if (bill[i] === "call" || bill[i] === "CALL" || bill[i] === "Call" || bill[i] === "calL" || bill[i] === "cAll") {
+    total += 2.75;
+} else if (bill[i] === "sms" || bill[i] === "SMS" || bill[i] === "SmS" || bill[i] === "Sms" || bill[i] === "smS" || bill[i] === "sMs") {
+    total += 0.75;
+}
+
+
+
