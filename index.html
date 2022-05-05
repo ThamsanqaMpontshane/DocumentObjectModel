@@ -102,8 +102,8 @@
         <div class="row">
           <div class="six columns">
             <label for="">Bill type</label>
-            <input type="text" name="" value="" placeholder="enter 'call' or 'sms' " class="billTypeText" />
-            <button class="button-primary addToBillBtn" type="button" name="button" onclick="btnbtn1()">
+            <input type="text" name="" value="" placeholder="enter 'call' or 'sms' " class="billTypeText billTypeText1" />
+            <button class="button-primary addToBillBtn" type="button" name="button" onclick="textBillTotal()" >
               Add
             </button>
           </div>
@@ -112,15 +112,15 @@
             <table>
               <tr>
                 <td>Call total</td>
-                <td>R<span class="callTotalOne"></span></td>
+                <td>R<span class="callTotalOne">0.00</span></td>
               </tr>
               <tr>
                 <td>SMS total</td>
-                <td>R<span class="smsTotalOne"></span></td>
+                <td>R<span class="smsTotalOne">0.00</span></td>
               </tr>
               <tr>
                 <td>Total</td>
-                <td class="red">R<span class="totalOne"></span></td>
+                <td class="red">R<span class="totalOne">0.00</span></td>
               </tr>
             </table>
           </div>
@@ -160,7 +160,7 @@
               <input type="radio" name="billItemType" class="billItemTypeRadio" value="sms" />
               <span class="label-body">SMS</span>
             </label>
-            <button class="button-primary radioBillAddBtn" type="button" name="button">
+            <button class="button-primary radioBillAddBtn" type="button" name="button" onclick="radioBill()">
               Add
             </button>
           </div>
@@ -208,14 +208,14 @@
           <div class="six columns">
             <h5>Bill type</h5>
             <label class="">
-              <input type="radio" nacall,sms,me="billItemTypeWithSettings" class="billItemTypeWithSettings" />
+              <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings" / value="call">
               <span class="label-body">Call</span>
             </label>
             <label class="">
-              <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings" />
+              <input type="radio" name="billItemTypeWithSettings" class="billItemTypeWithSettings" value="sms" />
               <span class="label-body">SMS</span>
             </label>
-            <button class="button-primary" type="button" name="button">
+            <button class="button-primary" type="button" name="button" onclick="settingsBill();">
               Add
             </button>
 
@@ -223,15 +223,15 @@
             <table>
               <tr>
                 <td>Call total</td>
-                <td>R<span class="callTotalSettings"></span></td>
+                <td>R<span class="callTotalSettings">0.00</span></td>
               </tr>
               <tr>
                 <td>SMS total</td>
-                <td>R<span class="smsTotalSettings"></span></td>
+                <td>R<span class="smsTotalSettings">0.00</span></td>
               </tr>
               <tr>
                 <td>Total</td>
-                <td>R<span class="totalSettings"></span></td>
+                <td>R<span class="totalSettings">0.00</span></td>
               </tr>
             </table>
           </div>
@@ -246,7 +246,7 @@
               class="warningLevel" />
             <label for="">Critical level</label>
             <input class="u-full-width criticalLevelSetting" type="number" placeholder="eg. 65.00" />
-            <button class="button-primary updateSettings" type="button" name="button">
+            <button class="button-primary updateSettings" type="button" name="button" onclick="updateCosts();">
               Update settings
             </button>
           </div>

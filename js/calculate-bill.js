@@ -26,7 +26,7 @@ function totalPhoneBill(phoneBill) {
         if (bill[i] === "call") {
             total += 2.75;
         } else if (bill[i] === "sms") {
-            total += 0.65;
+            total += 0.75;
         }
     }
     return total.toFixed(2);
@@ -44,6 +44,7 @@ function btnbtn() {
     else if (totalPhoneBill(billString) >= 30 && totalPhoneBill(billString) < 50) {
         billTotal.classList.add("danger");
     }
+
 };
   
 
