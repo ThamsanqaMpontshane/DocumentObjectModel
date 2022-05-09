@@ -24,7 +24,7 @@ function totalPhoneBill(phoneBill) {
     var bill = phoneBill.split(",");
     for (i = 0;i < bill.length;i++) {
     var billString1 = bill[i].trim()
-    if (billString1 === "call" || billString1 === "CALL" || billString1 === "Call" || billString1 === "calL" || billString1 === "cAll") {
+    if (billString1 === "call" || billString1 === "CALL" || billString1 === "Call" || billString1 === "calL" || billString1 === "cAll" || billString1 === "caLL" || billString1 === "cALL" || billString1 === "caLl" || billString1 === "cAlL") {
             total += 2.75;
     } else if (billString1 === "sms" || billString1 === "SMS" || billString1 === "SmS" || billString1=== "Sms" || billString1 === "smS" || billString1 === "sMs") {
             total += 0.75;
