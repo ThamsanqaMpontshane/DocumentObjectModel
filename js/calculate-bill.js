@@ -46,7 +46,7 @@ function btnbtn() {
         billTotal.classList.remove("danger");
         billTotal.classList.add("warning");
     }
-    else if (totalPhoneBill(billString) > 30 && totalPhoneBill(billString) < 50) {
+    else if (totalPhoneBill(billString) > 30) {
         billTotal.classList.remove("warning");
         billTotal.classList.add("danger");
     }

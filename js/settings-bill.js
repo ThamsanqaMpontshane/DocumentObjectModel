@@ -35,27 +35,30 @@ function settingsBill() {
         var billTypeEntered1 = checkedRadioBtn.value;
     }
 
-    // var njerr = document.querySelector(".callCostSetting").value;
-    // var njerr1 = docum:nt.querySelector(".smsCostSetting").value;
-    
-   if(totalCost2 <= critical){
+    if (totalCost2 < critical) {
+
         if (billTypeEntered1 === "call") {
-        callsTotal2 += call;
-    } else if (billTypeEntered1 === "sms") {
-        smsTotal2 += sms;
+            callsTotal2 += call;
+
+        } else if (billTypeEntered1 === "sms") {
+            smsTotal2 += sms;
+
+        }
     }
-}
+
+
+    totalCost2 = callsTotal2 + smsTotal2;
+
+
     if (totalCost2 >= critical) {
         document.querySelector(".totalSettings").classList.remove("warning");
         document.querySelector(".totalSettings").classList.add("danger");
 
-    // } else if(critical < totalCost2){
-    //     document.querySelector(".totalSettings").classList.add("black");
     }
-    else if (totalCost2 >= warning && totalCost2 <= critical) {
+    else if (totalCost2 >= warning && totalCost2 < critical) {
         document.querySelector(".totalSettings").classList.remove("danger");
         document.querySelector(".totalSettings").classList.add("warning");
-        
+
     } else {
         document.querySelector(".totalSettings").classList.remove("warning");
         document.querySelector(".totalSettings").classList.remove("danger");
@@ -64,37 +67,27 @@ function settingsBill() {
 
     document.querySelector(".callTotalSettings").innerHTML = callsTotal2.toFixed(2);
     document.querySelector(".smsTotalSettings").innerHTML = smsTotal2.toFixed(2);
-     totalCost2 = callsTotal2 + smsTotal2;
-
     document.querySelector(".totalSettings").innerHTML = totalCost2.toFixed(2);
-    // var totalTwo1 = document.querySelector(".totalSettings").innerHTML;
-
-    
 }
 
 function updateCosts() {
-
-
     call = Number(document.querySelector(".callCostSetting").value);
     sms = Number(document.querySelector(".smsCostSetting").value);
     critical = Number(document.querySelector(".criticalLevelSetting").value);
     warning = Number(document.querySelector(".warningLevelSetting").value);
-    
+
     document.querySelector(".totalSettings").classList.remove("warning");
     document.querySelector(".totalSettings").classList.remove("danger");
-    if (totalCost2 > critical) {
+
+    if (totalCost2 >= critical) {
         document.querySelector(".totalSettings").classList.remove("warning");
         document.querySelector(".totalSettings").classList.add("danger");
 
-    // } else if(critical < totalCost2){
-    //     document.querySelector(".totalSettings").classList.add("black");
     }
-    else if (totalCost2 > warning && totalCost2 <= critical) {
+
+    else if (totalCost2 >= warning) {
         document.querySelector(".totalSettings").classList.remove("danger");
         document.querySelector(".totalSettings").classList.add("warning");
-        
-    } 
-       
+    }
 
-    
 }
