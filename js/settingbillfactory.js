@@ -3,8 +3,8 @@ function BillWithSettings() {
     var theSmsCost = 0;
     var theWarningLevel = 0;
     var theCriticalLevel = 0;
-    var callCostTotal=0;
-    var smsCostTotal=0;
+    var callCostTotal = 0;
+    var smsCostTotal = 0;
 
 
     // CALL
